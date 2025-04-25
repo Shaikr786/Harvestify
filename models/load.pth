@@ -1,0 +1,15 @@
+import torch
+from torchvision import models
+
+# Load the trained model (update path accordingly)
+model_path = "your_model.pth"  # Replace with your .pth file path
+
+# Initialize the model architecture (e.g., ResNet if used)
+model = models.resnet18()  # Change to the actual model used in training
+
+# Load trained weights
+model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+model.eval()  # Set model to evaluation mode
+
+print("Model loaded successfully!")
+
